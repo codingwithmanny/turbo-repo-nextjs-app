@@ -1,0 +1,26 @@
+{
+  "name": "turbo-repo-nextjs-app",
+  "private": true,
+  "license": "MIT",
+  "description": "Turbo Repo Next.js App",
+  "keywords": ["turbo", "repo", "next.js", "app"],
+  "author": "@codingwithmanny",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "db:up": "turbo run db:up",
+    "db:down": "turbo run db:down",
+    "db:studio": "turbo run db:studio"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.2.3",
+    "typescript": "5.5.4"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": ">=18"
+  }
+}

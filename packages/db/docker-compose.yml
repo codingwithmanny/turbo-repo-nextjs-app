@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: repo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Letmein!
+    ports:
+      - '5432:5432'
+    expose:
+      - '5432'
+  email:
+    image: mailhog/mailhog:latest
+    restart: always
+    ports:
+      - "1025:1025"
+      - "8025:8025"

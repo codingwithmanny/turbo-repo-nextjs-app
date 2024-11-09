@@ -1,0 +1,12 @@
+{
+  "name": "@repo/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "TypeScript config for the repo in Turbo Repo",
+  "keywords": ["turbo", "repo", "typescript", "config"],
+  "author": "@codingwithmanny",
+  "publishConfig": {
+    "access": "public"
+  }
+}

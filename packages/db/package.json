@@ -1,0 +1,56 @@
+{
+  "name": "@repo/db",
+  "version": "1.0.0",
+  "description": "Database client for the repo in Turbo Repo",
+  "keywords": ["turbo", "repo", "database", "client", "drizzle"],
+  "author": "@codingwithmanny",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./client": {
+      "types": "./dist/src/client.d.ts",
+      "default": "./src/client.ts"
+    },
+    "./schema": {
+      "types": "./dist/src/schema.d.ts",
+      "default": "./src/schema.ts"
+    },
+    "./env": {
+      "types": "./dist/env.d.ts",
+      "default": "./env.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf .turbo dist node_modules",
+    "db:up": "docker compose -p repo up -d",
+    "db:down": "docker compose -p repo down",
+    "db:generate": "pnpm with-env drizzle-kit generate",
+    "db:push": "pnpm with-env drizzle-kit push",
+    "db:migrate": "pnpm with-env drizzle-kit migrate",
+    "db:studio": "pnpm with-env drizzle-kit studio",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:^",
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.11.10",
+    "dotenv-cli": "^7.4.2",
+    "drizzle-kit": "^0.28.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@oslojs/encoding": "^1.1.0",
+    "@t3-oss/env-core": "^0.11.1",
+    "drizzle-orm": "^0.36.1",
+    "drizzle-zod": "^0.5.1",
+    "pg": "^8.13.1",
+    "sha2": "^1.0.2",
+    "zod": "^3.23.8"
+  }
+}
