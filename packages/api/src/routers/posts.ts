@@ -1,7 +1,7 @@
 // Imports
 // ========================================================
 import { z } from "zod";
-import { createTRPCRouter, protectedProcedure, publicProcedure } from "@/trpc";
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
 import { posts } from "@repo/db/schema";
 import { eq, and } from "@repo/db";
 

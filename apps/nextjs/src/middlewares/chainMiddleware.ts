@@ -31,8 +31,8 @@ export function chainMiddleware(
   }
 
   return (
-    request: NextRequest,
-    event: NextFetchEvent,
+    _request: NextRequest,
+    _event: NextFetchEvent,
     response: NextResponse,
   ) => {
     return response

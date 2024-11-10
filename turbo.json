@@ -23,7 +23,7 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -32,5 +32,23 @@
       "cache": false,
       "persistent": true
     }
-  }
+  },
+  "globalEnv": [
+    "JWT_SECRET",
+    "EMAIL_SERVER_HOST",
+    "EMAIL_SERVER_PORT",
+    "EMAIL_SERVER_USER",
+    "EMAIL_SERVER_PASSWORD",
+    "EMAIL_FROM",
+    "EMAIL_SERVER_SECURE",
+    "PORT"
+  ],
+  "globalPassThroughEnv": [
+    "NODE_ENV",
+    "CI",
+    "VERCEL",
+    "VERCEL_ENV",
+    "VERCEL_URL",
+    "npm_lifecycle_event"
+  ]
 }
