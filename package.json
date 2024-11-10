@@ -12,6 +12,9 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "db:up": "turbo run db:up",
     "db:down": "turbo run db:down",
+    "db:migrate": "turbo run db:migrate",
+    "db:generate": "turbo run db:generate",
+    "db:push": "turbo run db:push",
     "db:studio": "turbo run db:studio"
   },
   "devDependencies": {

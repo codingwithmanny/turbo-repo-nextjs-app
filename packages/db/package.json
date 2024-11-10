@@ -2,7 +2,13 @@
   "name": "@repo/db",
   "version": "1.0.0",
   "description": "Database client for the repo in Turbo Repo",
-  "keywords": ["turbo", "repo", "database", "client", "drizzle"],
+  "keywords": [
+    "turbo",
+    "repo",
+    "database",
+    "client",
+    "drizzle"
+  ],
   "author": "@codingwithmanny",
   "license": "MIT",
   "type": "module",
@@ -42,6 +48,7 @@
     "@types/pg": "^8.11.10",
     "dotenv-cli": "^7.4.2",
     "drizzle-kit": "^0.28.0",
+    "eslint": "^9.14.0",
     "typescript": "^5.6.3"
   },
   "dependencies": {

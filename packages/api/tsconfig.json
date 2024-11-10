@@ -6,12 +6,12 @@
     "incremental": true,
     "module": "Preserve",
     "moduleResolution": "Bundler",
-    
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src", "*.ts"],
   "exclude": ["node_modules", "dist"]
 }

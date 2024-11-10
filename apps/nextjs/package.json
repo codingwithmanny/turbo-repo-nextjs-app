@@ -1,6 +1,6 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "@repo/nextjs",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "pnpm with-env next dev --turbopack",
@@ -10,16 +10,25 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
+    "@repo/api": "workspace:^",
+    "@repo/auth": "workspace:^",
     "@repo/db": "workspace:^",
     "@t3-oss/env-nextjs": "^0.11.1",
+    "@tanstack/react-query": "^5.59.20",
+    "@trpc/client": "11.0.0-rc.621",
+    "@trpc/react-query": "11.0.0-rc.621",
+    "jsonwebtoken": "^9.0.2",
     "next": "15.0.3",
+    "nodemailer": "^6.9.16",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
+    "superjson": "^2.2.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:^",
     "@repo/typescript-config": "workspace:^",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
