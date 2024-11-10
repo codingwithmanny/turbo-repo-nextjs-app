@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     "@repo/db",
     "@repo/auth",
     "@repo/api",
+    "@repo/ui",
     // Example
     // "@repo/ui",
   ],

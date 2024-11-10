@@ -7,10 +7,17 @@ import { cookies } from "next/headers";
 import { validateSessionToken } from "@repo/auth";
 import { type User } from "@repo/db/schema";
 import { signIn } from "@/actions/auth/signin";
+import { Label } from "@repo/ui/label";
+import { Input } from "@repo/ui/input";
+import { Button } from "@repo/ui/button";
 
 // Page Component
 // ============================================================
-export default async function SignIn() {
+export default async function SignIn({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+  // Params
+  const success = searchParams?.success;
+  const error = searchParams?.error;
+
   // Server Side Requests
   const token = (await cookies()).get("session")?.value;
   let user: User | null = null;
@@ -29,23 +36,26 @@ export default async function SignIn() {
     const email = formData.get("email") as string;
     const result = await signIn({ email });
     if (result.success) {
-      return redirect("/");
+      return redirect("/auth/signin?success=true");
     }
+    redirect(`/auth/signin?error=${result.error}`);
   };
 
   // Render
   return (
-    <main>
+    <main className="p-8">
       <h1>Sign In</h1>
       <p>Sign-in with your email. Don't have an account? <Link href="/auth/signup">Sign Up</Link>.</p>
       <hr />
       <form action={handleSubmitSignIn}>
         <div className="mb-4">
-          <label htmlFor="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="your@email.com" />
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" name="email" type="email" required placeholder="your@email.com" />
         </div>
+        {error && <p className="text-red-500">{error}</p>}
+        {success && <p className="text-green-500">Please check your email for a verification link.</p>}
         <div>
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </div>
       </form>
     </main>

@@ -6,6 +6,7 @@
   "keywords": ["turbo", "repo", "next.js", "app"],
   "author": "@codingwithmanny",
   "scripts": {
+    "clean": "turbo clean && rm -rf .turbo node_modules",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",

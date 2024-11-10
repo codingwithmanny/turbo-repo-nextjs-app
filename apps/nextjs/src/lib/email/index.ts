@@ -24,13 +24,12 @@ export const sendEmail = async ({
     },
   });
 
-  const result = await transporter.sendMail({
+  await transporter.sendMail({
     from: env.EMAIL_FROM,
     to,
     subject,
     html,
   });
-  console.log({ result });
 
   transporter.close();
 };
