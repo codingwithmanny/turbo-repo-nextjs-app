@@ -27,7 +27,6 @@ export function withAuth(middleware: CustomMiddleware) {
     const pathname = request.nextUrl.pathname;
     const origin = request.nextUrl.origin;
 
-    console.log({ pathname });
     if (
       getExcludePaths({
         currentLanguage: request.headers.get("x-next-locale") ?? "en",
