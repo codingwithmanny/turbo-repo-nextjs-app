@@ -37,7 +37,7 @@ export const PostsUpdate = ({
   const postsUpdate = api.posts.update.useMutation({
     onSuccess: () => {
       toast({
-        title: "Post created successfully",
+        title: "Post updated successfully",
       });
       setOpen(false);
     },
