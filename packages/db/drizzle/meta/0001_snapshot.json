@@ -1,6 +1,6 @@
 {
-  "id": "7ee65d1f-66f3-48ad-9f73-4502515dadb9",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "bb2137c8-5d2a-4069-88cc-cdebe808b03e",
+  "prevId": "7ee65d1f-66f3-48ad-9f73-4502515dadb9",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -33,6 +33,65 @@
         "repo_magiclinks_user_id_repo_users_id_fk": {
           "name": "repo_magiclinks_user_id_repo_users_id_fk",
           "tableFrom": "repo_magiclinks",
+          "tableTo": "repo_users",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.repo_posts": {
+      "name": "repo_posts",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "content": {
+          "name": "content",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "repo_posts_user_id_repo_users_id_fk": {
+          "name": "repo_posts_user_id_repo_users_id_fk",
+          "tableFrom": "repo_posts",
           "tableTo": "repo_users",
           "columnsFrom": [
             "user_id"

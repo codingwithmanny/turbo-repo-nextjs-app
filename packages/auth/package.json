@@ -1,0 +1,43 @@
+{
+  "name": "@repo/auth",
+  "version": "1.0.0",
+  "description": "Authentication for the repo in Turbo Repo",
+  "keywords": [
+    "turbo",
+    "repo",
+    "auth",
+    "authentication"
+  ],
+  "author": "@codingwithmanny",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@oslojs/crypto": "^1.0.1",
+    "@oslojs/encoding": "^1.1.0",
+    "@repo/db": "workspace:^",
+    "@t3-oss/env-nextjs": "^0.11.1",
+    "drizzle-orm": "^0.36.1",
+    "next": "15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:^",
+    "@types/react": "^18.3.12",
+    "typescript": "^5.6.3"
+  }
+}
