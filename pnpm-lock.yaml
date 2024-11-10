@@ -130,6 +130,9 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:^
         version: link:../typescript-config
+      '@types/pg':
+        specifier: ^8.11.10
+        version: 8.11.10
       eslint:
         specifier: ^9.14.0
         version: 9.14.0
