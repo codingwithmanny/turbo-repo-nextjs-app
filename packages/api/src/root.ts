@@ -1,7 +1,7 @@
 // Imports
 // ========================================================
-import { postsRouter } from "@/routers/posts";
-import { createTRPCRouter, createCallerFactory } from "@/trpc";
+import { postsRouter } from "./routers/posts";
+import { createTRPCRouter, createCallerFactory } from "./trpc";
 
 // Router
 // ========================================================

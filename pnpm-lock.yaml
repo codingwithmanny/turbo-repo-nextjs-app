@@ -75,6 +75,12 @@ importers:
       '@types/node':
         specifier: ^20
         version: 20.17.6
+      '@types/nodemailer':
+        specifier: ^6.4.16
+        version: 6.4.16
+      '@types/pg':
+        specifier: ^8.11.10
+        version: 8.11.10
       '@types/react':
         specifier: ^18
         version: 18.3.12
@@ -124,9 +130,6 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:^
         version: link:../typescript-config
-      '@types/pg':
-        specifier: ^8.11.10
-        version: 8.11.10
       eslint:
         specifier: ^9.14.0
         version: 9.14.0
@@ -1663,6 +1666,12 @@ packages:
     resolution: {integrity: sha512-vuyHg81vvWA1Z1ELfvLko2c8f34gyA0zaic0+Rllc5lbCnbSyuvb2Oxpm6TAUAC/2xZN3QGqxBNggD1nNR2AfQ==}
     dependencies:
       undici-types: 6.19.8
+    dev: true
+
+  /@types/nodemailer@6.4.16:
+    resolution: {integrity: sha512-uz6hN6Pp0upXMcilM61CoKyjT7sskBoOWpptkjjJp8jIMlTdc3xG01U7proKkXzruMS4hS0zqtHNkNPFB20rKQ==}
+    dependencies:
+      '@types/node': 20.17.6
     dev: true
 
   /@types/normalize-package-data@2.4.4:

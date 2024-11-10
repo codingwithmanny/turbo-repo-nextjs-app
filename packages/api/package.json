@@ -31,7 +31,6 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:^",
     "@repo/typescript-config": "workspace:^",
-    "@types/pg": "^8.11.10",
     "eslint": "^9.14.0",
     "prettier": "^3.2.5",
     "typescript": "^5.6.3"
