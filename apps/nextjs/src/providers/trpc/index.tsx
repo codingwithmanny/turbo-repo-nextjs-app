@@ -14,7 +14,7 @@ import { type AppRouter } from "@repo/api";
 /**
  * This creates the tRPC API for client-side use.
  */
-const api = createTRPCReact<AppRouter>();
+export const api = createTRPCReact<AppRouter>();
 
 const getBaseUrl = () => {
   if (typeof window !== "undefined") return window.location.origin;

@@ -13,7 +13,7 @@ export const GET = async (req: NextRequest) => {
     return NextResponse.json({ valid: false })
   }
 
-  const { session } = await validateSessionToken(sessionToken)
+  const { session } = await validateSessionToken(sessionToken);
 
   if (!session) {
     return NextResponse.json({ valid: false })

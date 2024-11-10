@@ -52,7 +52,10 @@ export async function createSession(token: string, userId: number | string, opti
  * @param token - Session token
  * @returns Session validation result
  */
-export async function validateSessionToken(token: string): Promise<SessionValidationResult> {
+export async function validateSessionToken(token?: string | null): Promise<SessionValidationResult> {
+	if (!token) {
+		return { session: null, user: null };
+	}
 	const sessionId = encodeHexLowerCase(sha256(new TextEncoder().encode(token)));
 	const result = await db
 		.select({ user: usersTable, session: sessionTable })

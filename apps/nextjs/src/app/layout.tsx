@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import "@repo/ui/globals.css";
 import RootProvider from "@/providers";
-import { Toaster } from "@repo/ui/toaster";
+import { Toaster } from "@repo/ui/components/ui/toaster";
 
 // Metadata
 // ============================================================

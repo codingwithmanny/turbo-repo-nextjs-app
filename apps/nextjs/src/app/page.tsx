@@ -8,11 +8,13 @@ import Link from "next/link";
 import { signOut } from "@/actions/auth/signout";
 import { redirect } from "next/navigation";
 import { api } from "@/providers/trpc/server";
-import { postCreate, postDelete, postUpdate } from "@/actions/posts";
-import { Button } from "@repo/ui/button";
-import { Input } from "@repo/ui/input";
-import { Label } from "@repo/ui/label";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@repo/ui/card";
+import { postCreate, postDelete } from "@/actions/posts";
+import { Button } from "@repo/ui/components/ui/button";
+import { Input } from "@repo/ui/components/ui/input";
+import { Label } from "@repo/ui/components/ui/label";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@repo/ui/components/ui/card";
+import { PostsCreate } from "@/components/Posts/Create";
+import { PostsUpdate } from "@/components/Posts/Update";
 
 // Main Page Component
 // ============================================================
@@ -89,16 +91,20 @@ const Home = async () => {
             </CardContent>
             <CardFooter>
             {user && user.id === post.userId ? (
-              <>
-                <form action={postDelete}>
+              <div className="flex gap-2">
+                <form className="mb-0" action={postDelete}>
                   <input type="hidden" name="id" value={post.id} />
                   <Button type="submit" variant="destructive">Delete</Button>
                 </form>
-              </>
+                <PostsUpdate post={post} />
+              </div>
             ) : null}
             </CardFooter>
           </Card>
         ))}
+        <hr />
+        <h2>Client-Side Components</h2>
+        <PostsCreate />
       </div>
       {/* <ul className="posts">
         {posts.map((post) => (

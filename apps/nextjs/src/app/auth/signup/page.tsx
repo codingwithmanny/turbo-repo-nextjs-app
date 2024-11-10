@@ -7,9 +7,9 @@ import { cookies } from "next/headers";
 import { validateSessionToken } from "@repo/auth";
 import { type User } from "@repo/db/schema";
 import { signUp } from "@/actions/auth/signup";
-import { Label } from "@repo/ui/label";
-import { Input } from "@repo/ui/input";
-import { Button } from "@repo/ui/button";
+import { Label } from "@repo/ui/components/ui/label";
+import { Input } from "@repo/ui/components/ui/input";
+import { Button } from "@repo/ui/components/ui/button";
 
 // Page Component
 // ============================================================

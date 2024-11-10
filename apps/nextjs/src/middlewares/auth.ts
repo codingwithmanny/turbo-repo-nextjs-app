@@ -13,6 +13,7 @@ import type { CustomMiddleware } from "@/middlewares/chainMiddleware";
  *
  * @dev Restarts the server when changing this
  */
+// @TODO: Add the path for the update post
 function getExcludePaths({ currentLanguage }: { currentLanguage: string }) {
   return ["/auth/signin", "/auth/signup", "/api/auth/email", "/api/auth/verify"];
   // return [`/${currentLanguage}/auth`];
@@ -36,7 +37,7 @@ export function withAuth(middleware: CustomMiddleware) {
     }
 
     const verifyRequest = await fetch(`${origin}/api/auth/verify`, {
-      headers: { Cookie: cookies().toString() },
+      headers: { Cookie: await (cookies()).toString() },
     });
 
     const verifySession = (await verifyRequest.json()) as {
