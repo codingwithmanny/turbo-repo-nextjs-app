@@ -13,10 +13,10 @@ import { Button } from "@repo/ui/button";
 
 // Page Component
 // ============================================================
-export default async function SignUp({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+export default async function SignUp({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
   // Params
-  const success = searchParams?.success;
-  const error = searchParams?.error;
+  const success = (await searchParams)?.success;
+  const error = (await searchParams)?.error;
 
   // Server Side Requests
   const token = (await cookies()).get("session")?.value;
